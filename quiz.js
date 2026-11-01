@@ -58,9 +58,11 @@ async function askQuestion(question, questionNumber) {
     console.log(`\nQuestion ${questionNumber}:`);
     console.log(question.question);
 
-    question.options.forEach((option, index) => {
-        console.log(`${index + 1}. ${option}`);
+    const options = question.options.map((option, index) => {
+    return `${index + 1}. ${option}`;
     });
+
+options.forEach((option) => console.log(option));
 
     return new Promise((resolve) => {
         let answered = false;
